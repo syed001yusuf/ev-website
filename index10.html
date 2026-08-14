@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOLTX EV SOLUTIONS | EV Charger Installation & Charging Infrastructure</title>
+  <meta name="description" content="VOLTX EV SOLUTIONS provides EV charger installation, smart charging solutions, maintenance and support for apartments, businesses, warehouses and commercial properties. Get a free site survey today.">
+  <meta name="keywords" content="EV charger installation, EV charging station installation, EV charging for apartments, EV charger installation Bangalore, EV charging infrastructure, EV charging solutions, EV charger for apartments, EV charging station for businesses">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0a0d0c',
+              dark: '#0f1715',
+              card: '#16221f',
+              cardBorder: '#233832',
+              greenDark: '#082f24',
+              green: '#00E676',
+              greenHover: '#00C853',
+              accent: '#10B981',
+              lightGray: '#f8faf9',
+              muted: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon': '0 0 25px -5px rgba(0, 230, 118, 0.4)',
+            'neon-lg': '0 0 40px -5px rgba(0, 230, 118, 0.6)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .glow-effect {
+      background: radial-gradient(circle at 50% 50%, rgba(0, 230, 118, 0.15), transparent 70%);
+    }
+    .hero-pattern {
+      background-image: radial-gradient(rgba(0, 230, 118, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-black text-slate-100 font-sans antialiased selection:bg-brand-green selection:text-brand-black pb-20 md:pb-0">
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 bg-brand-black/90 backdrop-blur-md border-b border-brand-cardBorder transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-brand-black transition-all">
+            <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight text-white flex items-center">
+              VOLTX <span class="text-brand-green ml-1.5 font-bold text-sm tracking-widest px-1.5 py-0.5 bg-brand-green/10 rounded border border-brand-green/20">EV</span>
+            </span>
+            <span class="block text-[10px] tracking-widest text-brand-muted font-semibold uppercase -mt-0.5">Solutions</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+          <a href="#home" class="text-slate-200 hover:text-brand-green transition-colors">Home</a>
+          <a href="#about" class="text-slate-200 hover:text-brand-green transition-colors">About</a>
+          <a href="#services" class="text-slate-200 hover:text-brand-green transition-colors">Services</a>
+          <a href="#process" class="text-slate-200 hover:text-brand-green transition-colors">How It Works</a>
+          <a href="#faq" class="text-slate-200 hover:text-brand-green transition-colors">FAQ</a>
+          <a href="#contact" class="text-slate-200 hover:text-brand-green transition-colors">Contact</a>
+        </nav>
+
+        <!-- CTA & Phone (Desktop) -->
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="tel:7795569978" class="flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-white px-3 py-2">
+            <i data-lucide="phone-call" class="w-4 h-4 text-brand-green"></i>
+            7795569978
+          </a>
+          <a href="#contact" class="bg-brand-green text-brand-black font-bold px-5 py-2.5 rounded-full text-sm hover:bg-brand-greenHover hover:shadow-neon transition-all duration-300">
+            Get Free Site Survey
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-brand-card focus:outline-none" aria-label="Toggle navigation">
+          <i data-lucide="menu" id="menuIcon" class="w-7 h-7"></i>
+          <i data-lucide="x" id="closeIcon" class="w-7 h-7 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-dark/98 border-b border-brand-cardBorder px-6 py-6 space-y-4">
+      <a href="#home" class="mobile-link block text-base font-semibold text-slate-200 hover:text-brand-green">Home</a>
+      <a href="#about" class="mobile-link block text-base font-semibold text-slate-200 hover:text-brand-green">About</a>
+      <a href="#services" class="mobile-link block text-base font-semibold text-slate-200 hover:text-brand-green">Services</a>
+      <a href="#process" class="mobile-link block text-base font-semibold text-slate-200 hover:text-brand-green">How It Works</a>
+      <a href="#faq" class="mobile-link block text-base font-semibold text-slate-200 hover:text-brand-green">FAQ</a>
+      <a href="#contact" class="mobile-link block text-base font-semibold text-slate-200 hover:text-brand-green">Contact</a>
+      <div class="pt-4 border-t border-brand-cardBorder flex flex-col gap-3">
+        <a href="tel:7795569978" class="flex items-center justify-center gap-2 bg-brand-card border border-brand-cardBorder py-3 rounded-xl font-bold text-white">
+          <i data-lucide="phone" class="w-4 h-4 text-brand-green"></i> Call 7795569978
+        </a>
+        <a href="#contact" class="mobile-link block text-center bg-brand-green text-brand-black font-bold py-3 rounded-xl shadow-neon">
+          Get Free Site Survey
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative overflow-hidden hero-pattern pt-12 pb-20 md:pt-20 md:pb-28">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] glow-effect pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs md:text-sm font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+            India's Trusted EV Infrastructure Partner
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            FREE EV CHARGER INSTALLATION FOR <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-emerald-400">APARTMENTS</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl font-medium text-slate-300 max-w-xl mx-auto lg:mx-0">
+            Powering Communities. Charging the Future.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brand-green text-brand-black font-extrabold text-base px-8 py-4 rounded-xl shadow-neon hover:bg-brand-greenHover hover:scale-[1.02] transition-all">
+              <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+              Get a Free Site Survey
+            </a>
+            <a href="https://wa.me/917795569978?text=Hi%20VoltX%2C%20I%20am%20interested%20in%20Free%20EV%20Charger%20Installation" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder text-white font-bold text-base px-7 py-4 rounded-xl transition-all">
+              <i data-lucide="message-circle" class="w-5 h-5 text-brand-green"></i>
+              Talk to Us
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-brand-cardBorder/60 text-left">
+            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <span>100% Free Setup</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <span>Safe & Certified</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300">
+              <i data-lucide="car" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <span>2 & 4 Wheelers</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300">
+              <i data-lucide="clock-4" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <span>24/7 Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic & Floating Offer Badge -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-brand-cardBorder shadow-2xl bg-brand-card">
+            <!-- Modern EV Charging Station Imagery -->
+            <img 
+              src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=80" 
+              alt="EV Charging Station in Apartment Parking" 
+              class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700 opacity-90"
+              loading="lazy"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+
+            <!-- Floating Offer Card -->
+            <div class="absolute bottom-4 left-4 right-4 bg-brand-dark/95 backdrop-blur-md border border-brand-green/40 p-4 rounded-2xl shadow-neon">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-brand-green flex items-center justify-center text-brand-black font-black text-xl shrink-0">
+                  0₹
+                </div>
+                <div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-brand-green">For Apartment Associations</div>
+                  <div class="text-base font-extrabold text-white">NO INVESTMENT • 100% FREE INSTALLATION</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Micro Floating Card -->
+          <div class="hidden sm:flex absolute -top-4 -right-4 bg-brand-dark/90 border border-brand-cardBorder px-4 py-2.5 rounded-2xl items-center gap-2.5 shadow-xl">
+            <span class="flex h-3 w-3 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-green"></span>
+            </span>
+            <span class="text-xs font-bold text-slate-200">2W & 4W Fast Charging</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="py-16 md:py-24 bg-brand-dark border-y border-brand-cardBorder relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <h2 class="text-xs font-bold tracking-widest text-brand-green uppercase">About VoltX EV Solutions</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-white">Making EV Charging Accessible For Every Community</p>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed pt-2">
+          VoltX EV Solutions is on a mission to make EV charging simple, accessible and convenient for every community. We design, install and manage smart EV charging infrastructure for apartments, warehouses, offices, residents and businesses so charging becomes easy and hassle-free.
+        </p>
+      </div>
+
+      <!-- What We Do (5 Cards) -->
+      <div class="space-y-6">
+        <h3 class="text-xl font-bold text-center text-slate-200 mb-8">What We Do</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          
+          <div class="bg-brand-card hover:bg-brand-cardBorder/60 border border-brand-cardBorder p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-4">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-2">1. Site Survey & Assessment</h4>
+            <p class="text-slate-400 text-xs sm:text-sm">Comprehensive electrical load & layout analysis for optimal placement.</p>
+          </div>
+
+          <div class="bg-brand-card hover:bg-brand-cardBorder/60 border border-brand-cardBorder p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-4">
+              <i data-lucide="wrench" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-2">2. Charger Installation</h4>
+            <p class="text-slate-400 text-xs sm:text-sm">End-to-end setup including cabling, switchgears, and robust safety gear.</p>
+          </div>
+
+          <div class="bg-brand-card hover:bg-brand-cardBorder/60 border border-brand-cardBorder p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-4">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-2">3. Smart Solutions</h4>
+            <p class="text-slate-400 text-xs sm:text-sm">Smart meter integration, RFID/App access, and intelligent load balance.</p>
+          </div>
+
+          <div class="bg-brand-card hover:bg-brand-cardBorder/60 border border-brand-cardBorder p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-4">
+              <i data-lucide="headset" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-2">4. Operation & Support</h4>
+            <p class="text-slate-400 text-xs sm:text-sm">24/7 round-the-clock technical helpline and user billing administration.</p>
+          </div>
+
+          <div class="bg-brand-card hover:bg-brand-cardBorder/60 border border-brand-cardBorder p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 md:col-span-3 lg:col-span-1">
+            <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-4">
+              <i data-lucide="activity" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-2">5. Maintenance & Monitoring</h4>
+            <p class="text-slate-400 text-xs sm:text-sm">Preventive health checks and real-time remote diagnostics.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== APARTMENT FOCUS & BENEFITS ==================== -->
+  <section class="py-16 md:py-24 bg-brand-greenDark relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left: Why EV Charging in Apartments? -->
+        <div class="space-y-6">
+          <div class="inline-block px-3 py-1 bg-brand-green/20 text-brand-green rounded-full text-xs font-bold uppercase">
+            Community Transformation
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Why EV Charging in Apartments?</h2>
+          <p class="text-emerald-100/80 text-sm sm:text-base">
+            Over 80% of EV charging happens at home. Providing reliable infrastructure right in the basement parking elevates resident convenience and property value.
+          </p>
+
+          <div class="space-y-3.5 pt-2">
+            <div class="flex items-center gap-3 bg-black/20 p-3 rounded-xl border border-emerald-500/20">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-green shrink-0"></i>
+              <span class="text-slate-100 font-semibold text-sm sm:text-base">Convenience for all residents</span>
+            </div>
+            <div class="flex items-center gap-3 bg-black/20 p-3 rounded-xl border border-emerald-500/20">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-green shrink-0"></i>
+              <span class="text-slate-100 font-semibold text-sm sm:text-base">Safe, regulated & reliable charging</span>
+            </div>
+            <div class="flex items-center gap-3 bg-black/20 p-3 rounded-xl border border-emerald-500/20">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-green shrink-0"></i>
+              <span class="text-slate-100 font-semibold text-sm sm:text-base">No more searching for crowded public chargers</span>
+            </div>
+            <div class="flex items-center gap-3 bg-black/20 p-3 rounded-xl border border-emerald-500/20">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-green shrink-0"></i>
+              <span class="text-slate-100 font-semibold text-sm sm:text-base">Supports green living & environmental sustainability</span>
+            </div>
+            <div class="flex items-center gap-3 bg-black/20 p-3 rounded-xl border border-emerald-500/20">
+              <i data-lucide="check-circle" class="w-5 h-5 text-brand-green shrink-0"></i>
+              <span class="text-slate-100 font-semibold text-sm sm:text-base">Future-ready community infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Benefits for Apartment Associations (RWA) -->
+        <div class="bg-brand-black/70 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-brand-green/30 space-y-6">
+          <div class="flex items-center justify-between border-b border-brand-cardBorder pb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Benefits for Associations (RWA)</h3>
+            <span class="text-xs bg-brand-green text-brand-black px-2.5 py-1 rounded font-extrabold uppercase">Zero Cost</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+              <div class="text-brand-green font-bold text-sm mb-1">✓ No Investment</div>
+              <div class="text-xs text-slate-300">100% free capital outlay for installation & wiring.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+              <div class="text-brand-green font-bold text-sm mb-1">✓ Professional Setup</div>
+              <div class="text-xs text-slate-300">Installed by certified electrical infrastructure experts.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+              <div class="text-brand-green font-bold text-sm mb-1">✓ Zero Operational Hassle</div>
+              <div class="text-xs text-slate-300">VoltX manages billing, electricity metering & upkeep.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+              <div class="text-brand-green font-bold text-sm mb-1">✓ Happy Residents</div>
+              <div class="text-xs text-slate-300">Attract modern tenants and increase asset value.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+              <div class="text-brand-green font-bold text-sm mb-1">✓ Future-Ready</div>
+              <div class="text-xs text-slate-300">Ready to scale as EV adoption increases in your society.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-cardBorder">
+              <div class="text-brand-green font-bold text-sm mb-1">✓ Green Recognition</div>
+              <div class="text-xs text-slate-300">Boost society image as a sustainable, eco-friendly hub.</div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="#contact" class="w-full flex items-center justify-center gap-2 bg-brand-green text-brand-black font-extrabold py-3.5 rounded-xl hover:bg-brand-greenHover transition-colors">
+              Book Association Site Survey
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section id="services" class="py-16 md:py-24 bg-brand-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-xs font-bold tracking-widest text-brand-green uppercase">Comprehensive Services</h2>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">EV CHARGING SOLUTIONS FOR APARTMENTS & BUSINESSES</h3>
+        <p class="text-slate-400 text-sm sm:text-base">We provide end-to-end EV charging solutions designed to make EV charging simple, reliable and accessible.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Service 1 -->
+        <div class="bg-brand-card border border-brand-cardBorder p-6 sm:p-8 rounded-2xl hover:border-brand-green/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-5 group-hover:bg-brand-green group-hover:text-brand-black transition-colors">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">1. Free EV Charger Installation</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Professional installation with suitable electrical load setup, earthing, cabling, and safety enclosures.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-brand-card border border-brand-cardBorder p-6 sm:p-8 rounded-2xl hover:border-brand-green/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-5 group-hover:bg-brand-green group-hover:text-brand-black transition-colors">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">2. 24/7 Monitoring & Support</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Reliable continuous monitoring and quick resolution support for seamless charger operation.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-brand-card border border-brand-cardBorder p-6 sm:p-8 rounded-2xl hover:border-brand-green/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-5 group-hover:bg-brand-green group-hover:text-brand-black transition-colors">
+            <i data-lucide="smartphone" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">3. Smart Charging Solutions</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">App-enabled authentication, automated billing, and smart load management for 2 & 4 wheelers.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-brand-card border border-brand-cardBorder p-6 sm:p-8 rounded-2xl hover:border-brand-green/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-5 group-hover:bg-brand-green group-hover:text-brand-black transition-colors">
+            <i data-lucide="settings" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">4. Regular Maintenance & Inspections</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Scheduled preventive maintenance, cable inspection, and firmware updates for zero downtime.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="bg-brand-card border border-brand-cardBorder p-6 sm:p-8 rounded-2xl hover:border-brand-green/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-5 group-hover:bg-brand-green group-hover:text-brand-black transition-colors">
+            <i data-lucide="badge-check" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">5. Safe & Certified Equipment</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Strict adherence to Indian standards (IS 17017 / ARAI certified) with multi-tier surge protection.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="bg-brand-card border border-brand-cardBorder p-6 sm:p-8 rounded-2xl hover:border-brand-green/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center mb-5 group-hover:bg-brand-green group-hover:text-brand-black transition-colors">
+            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">6. Usage Reports for Association</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Transparent monthly consumption logs and analytics delivered directly to the management committee.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PROCESS (HOW IT WORKS) ==================== -->
+  <section id="process" class="py-16 md:py-24 bg-brand-dark border-t border-brand-cardBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-xs font-bold tracking-widest text-brand-green uppercase">How It Works</h2>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">Our Process — Simple & Transparent</h3>
+        <p class="text-slate-400 text-sm sm:text-base">We handle everything from inspection to lifetime upkeep with zero hassle for you.</p>
+      </div>
+
+      <!-- Process Steps -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+        
+        <div class="bg-brand-card border border-brand-cardBorder p-5 rounded-2xl relative">
+          <span class="text-3xl font-black text-brand-green/30">01</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-1">DISCUSS</h4>
+          <p class="text-slate-400 text-xs">We understand your community's unique parking and power needs.</p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-cardBorder p-5 rounded-2xl relative">
+          <span class="text-3xl font-black text-brand-green/30">02</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-1">SITE SURVEY</h4>
+          <p class="text-slate-400 text-xs">Engineers inspect transformer load, space, and wiring paths.</p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-cardBorder p-5 rounded-2xl relative">
+          <span class="text-3xl font-black text-brand-green/30">03</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-1">PROPOSAL</h4>
+          <p class="text-slate-400 text-xs">We deliver a customized zero-cost installation plan.</p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-cardBorder p-5 rounded-2xl relative">
+          <span class="text-3xl font-black text-brand-green/30">04</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-1">APPROVAL</h4>
+          <p class="text-slate-400 text-xs">Once the committee approves, we schedule the installation date.</p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-cardBorder p-5 rounded-2xl relative">
+          <span class="text-3xl font-black text-brand-green/30">05</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-1">INSTALLATION</h4>
+          <p class="text-slate-400 text-xs">Certified installation, cabling, safety testing, and commissioning.</p>
+        </div>
+
+        <div class="bg-brand-card border border-brand-cardBorder p-5 rounded-2xl relative">
+          <span class="text-3xl font-black text-brand-green/30">06</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-1">SUPPORT</h4>
+          <p class="text-slate-400 text-xs">Continuous 24/7 monitoring, app support, and maintenance.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== WHO WE SERVE ==================== -->
+  <section class="py-16 md:py-20 bg-brand-black border-t border-brand-cardBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Who We Serve</h3>
+        <p class="text-slate-400 text-sm mt-2">Tailored EV solutions for residential and commercial hubs across India.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        
+        <div class="p-5 rounded-2xl bg-brand-card border border-brand-cardBorder text-center hover:border-brand-green transition-all">
+          <div class="text-3xl mb-2">🏢</div>
+          <div class="text-sm font-bold text-white">Apartments & Communities</div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-card border border-brand-cardBorder text-center hover:border-brand-green transition-all">
+          <div class="text-3xl mb-2">🏭</div>
+          <div class="text-sm font-bold text-white">Warehouses & Hubs</div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-card border border-brand-cardBorder text-center hover:border-brand-green transition-all">
+          <div class="text-3xl mb-2">🏬</div>
+          <div class="text-sm font-bold text-white">Offices & Tech Parks</div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-card border border-brand-cardBorder text-center hover:border-brand-green transition-all">
+          <div class="text-3xl mb-2">🏪</div>
+          <div class="text-sm font-bold text-white">Retail & Businesses</div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-card border border-brand-cardBorder text-center hover:border-brand-green transition-all">
+          <div class="text-3xl mb-2">🚗</div>
+          <div class="text-sm font-bold text-white">2W & 4W EV Owners</div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-brand-card border border-brand-cardBorder text-center hover:border-brand-green transition-all">
+          <div class="text-3xl mb-2">🅿️</div>
+          <div class="text-sm font-bold text-white">Parking Facilities</div>
+        </div>
+
+      </div>
+
+      <!-- Banner CTA -->
+      <div class="mt-12 bg-gradient-to-r from-brand-greenDark to-brand-card border border-brand-green/40 p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <h4 class="text-xl sm:text-2xl font-extrabold text-white">Ready to make your property EV-ready?</h4>
+          <p class="text-emerald-200/80 text-sm mt-1">Get your free site survey done by certified EV infrastructure engineers.</p>
+        </div>
+        <a href="#contact" class="bg-brand-green text-brand-black font-extrabold px-8 py-3.5 rounded-xl shadow-neon hover:bg-brand-greenHover shrink-0 transition-all">
+          Get a Free Site Survey
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FAQ SECTION ==================== -->
+  <section id="faq" class="py-16 md:py-24 bg-brand-dark border-t border-brand-cardBorder">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12 space-y-3">
+        <h2 class="text-xs font-bold tracking-widest text-brand-green uppercase">Got Questions?</h2>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h3>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-brand-card border border-brand-cardBorder rounded-2xl p-5 transition-all">
+          <summary class="flex justify-between items-center font-bold text-base sm:text-lg text-white cursor-pointer list-none">
+            <span>Why should we choose VOLTX for our apartment?</span>
+            <span class="transition group-open:rotate-180 text-brand-green">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-3 pt-3 border-t border-brand-cardBorder leading-relaxed">
+            We provide 100% free installation, high-quality ARAI-certified chargers, dedicated 24/7 customer support, and a completely hassle-free charging experience for both residents and the association.
+          </p>
+        </details>
+
+        <details class="group bg-brand-card border border-brand-cardBorder rounded-2xl p-5 transition-all">
+          <summary class="flex justify-between items-center font-bold text-base sm:text-lg text-white cursor-pointer list-none">
+            <span>Is the installation really free?</span>
+            <span class="transition group-open:rotate-180 text-brand-green">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-3 pt-3 border-t border-brand-cardBorder leading-relaxed">
+            Yes! Eligible apartments and gated communities can get 100% free installation with zero upfront capital expenditure from the association.
+          </p>
+        </details>
+
+        <details class="group bg-brand-card border border-brand-cardBorder rounded-2xl p-5 transition-all">
+          <summary class="flex justify-between items-center font-bold text-base sm:text-lg text-white cursor-pointer list-none">
+            <span>Will the association have to manage the chargers?</span>
+            <span class="transition group-open:rotate-180 text-brand-green">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-3 pt-3 border-t border-brand-cardBorder leading-relaxed">
+            No. VoltX handles installation, operations, smart metering, billing, monitoring, and regular maintenance so the association has zero operational overhead.
+          </p>
+        </details>
+
+        <details class="group bg-brand-card border border-brand-cardBorder rounded-2xl p-5 transition-all">
+          <summary class="flex justify-between items-center font-bold text-base sm:text-lg text-white cursor-pointer list-none">
+            <span>Can residents charge both 2 & 4 wheelers?</span>
+            <span class="transition group-open:rotate-180 text-brand-green">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-3 pt-3 border-t border-brand-cardBorder leading-relaxed">
+            Yes, our multi-point charging hubs and dedicated chargers support both electric 2-wheelers (scooters/bikes) and 4-wheelers (cars/SUVs) seamlessly.
+          </p>
+        </details>
+
+        <details class="group bg-brand-card border border-brand-cardBorder rounded-2xl p-5 transition-all">
+          <summary class="flex justify-between items-center font-bold text-base sm:text-lg text-white cursor-pointer list-none">
+            <span>What about safety?</span>
+            <span class="transition group-open:rotate-180 text-brand-green">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-3 pt-3 border-t border-brand-cardBorder leading-relaxed">
+            Safety is our highest priority. All equipment includes over-voltage protection, earth fault detection, IP65 weatherproof standards, and emergency shut-off controls.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT & SITE SURVEY FORM ==================== -->
+  <section id="contact" class="py-16 md:py-24 bg-brand-black border-t border-brand-cardBorder relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Details, Contact & Instagram QR -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-brand-green uppercase">Get in Touch</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">GET YOUR FREE SITE SURVEY</h2>
+            <p class="text-slate-300 text-sm mt-2">Make your apartment, business, or parking facility EV-ready today.</p>
+          </div>
+
+          <!-- Quick Connect Buttons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="tel:7795569978" class="flex items-center gap-3 bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder p-4 rounded-xl text-white font-bold transition-all">
+              <div class="w-10 h-10 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[10px] text-slate-400 uppercase">Call Now</div>
+                <div class="text-sm">7795569978</div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/917795569978?text=Hi%20VoltX%2C%20I%20want%20to%20schedule%20a%20Free%20Site%20Survey" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder p-4 rounded-xl text-white font-bold transition-all">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[10px] text-slate-400 uppercase">WhatsApp Us</div>
+                <div class="text-sm">Chat Instantly</div>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/VOLTX_EV_SOLUTIONS" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder p-4 rounded-xl text-white font-bold transition-all">
+              <div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center shrink-0">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[10px] text-slate-400 uppercase">Instagram</div>
+                <div class="text-sm">@VOLTX_EV...</div>
+              </div>
+            </a>
+
+            <a href="https://www.facebook.com/share/1BpHMPmV5i/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder p-4 rounded-xl text-white font-bold transition-all">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-[10px] text-slate-400 uppercase">Facebook</div>
+                <div class="text-sm">VoltX Official</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Instagram QR Code Card (High Scannability) -->
+          <div class="bg-brand-card border border-brand-cardBorder p-6 rounded-2xl flex items-center gap-6">
+            <div class="bg-white p-2.5 rounded-xl shrink-0 shadow-md">
+              <!-- Clear QR Code for @VOLTX_EV_SOLUTIONS -->
+              <img 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://www.instagram.com/VOLTX_EV_SOLUTIONS" 
+                alt="Instagram QR Code for @VOLTX_EV_SOLUTIONS" 
+                class="w-28 h-28 object-contain"
+                loading="lazy"
+              >
+            </div>
+            <div>
+              <div class="flex items-center gap-2 text-pink-400 font-bold text-sm">
+                <i data-lucide="camera" class="w-4 h-4"></i>
+                <span>Follow on Instagram</span>
+              </div>
+              <h4 class="font-extrabold text-white text-base mt-1">@VOLTX_EV_SOLUTIONS</h4>
+              <p class="text-slate-400 text-xs mt-1">Scan this QR code from your phone camera to follow our latest community setups.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-brand-dark border border-brand-cardBorder p-6 sm:p-10 rounded-3xl shadow-xl">
+            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <i data-lucide="calendar" class="w-5 h-5 text-brand-green"></i>
+              Request a Free Feasibility Survey
+            </h3>
+
+            <form id="surveyForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Your Name *</label>
+                  <input type="text" required placeholder="e.g. Ramesh Kumar" class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Phone Number *</label>
+                  <input type="tel" pattern="[0-9]{10}" required placeholder="10-digit mobile number" class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Email Address *</label>
+                  <input type="email" required placeholder="name@domain.com" class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Property / Apartment Name *</label>
+                  <input type="text" required placeholder="e.g. Prestige Greenwoods" class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Location / City *</label>
+                  <input type="text" required placeholder="e.g. Whitefield, Bengaluru" class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Estimated EV Users</label>
+                  <select class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white">
+                    <option value="1-5">1 - 5 EVs</option>
+                    <option value="5-15">5 - 15 EVs</option>
+                    <option value="15-30">15 - 30 EVs</option>
+                    <option value="30+">30+ EVs</option>
+                    <option value="Planning for future">Planning for future</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Message / Requirements</label>
+                <textarea rows="3" placeholder="Tell us about your parking layout or power connection..." class="w-full bg-brand-card border border-brand-cardBorder focus:border-brand-green focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-brand-green text-brand-black font-extrabold text-base py-4 rounded-xl shadow-neon hover:bg-brand-greenHover hover:shadow-neon-lg transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Request Free Site Survey
+              </button>
+
+              <div id="formSuccess" class="hidden p-4 rounded-xl bg-brand-green/20 border border-brand-green text-brand-green text-center text-sm font-semibold">
+                ✓ Thank you! Our technical team will reach out within 24 hours to schedule your survey.
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-brand-dark border-t border-brand-cardBorder pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-brand-green/10 border border-brand-green/30 flex items-center justify-center text-brand-green">
+              <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+            </div>
+            <span class="text-xl font-extrabold text-white">VOLTX <span class="text-brand-green">EV</span></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Powering Communities. Charging the Future. India's trusted turnkey EV charging infrastructure partner.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h5>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#home" class="hover:text-brand-green transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-brand-green transition-colors">About Us</a></li>
+            <li><a href="#services" class="hover:text-brand-green transition-colors">Solutions & Services</a></li>
+            <li><a href="#process" class="hover:text-brand-green transition-colors">How It Works</a></li>
+            <li><a href="#faq" class="hover:text-brand-green transition-colors">Frequently Asked Questions</a></li>
+            <li><a href="#contact" class="hover:text-brand-green transition-colors">Get Free Site Survey</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div>
+          <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Contact Info</h5>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <a href="tel:7795569978" class="hover:text-white">7795569978</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <a href="mailto:voltxevsolutions@gmail.com" class="hover:text-white truncate">voltxevsolutions@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-green shrink-0"></i>
+              <span>Bengaluru & Pan-India</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Social & Community -->
+        <div>
+          <h5 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Connect With Us</h5>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/VOLTX_EV_SOLUTIONS" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder flex items-center justify-center text-slate-300 hover:text-pink-400 transition-colors" aria-label="Instagram">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1BpHMPmV5i/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder flex items-center justify-center text-slate-300 hover:text-blue-400 transition-colors" aria-label="Facebook">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="https://wa.me/917795569978" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-brand-card hover:bg-brand-cardBorder border border-brand-cardBorder flex items-center justify-center text-slate-300 hover:text-emerald-400 transition-colors" aria-label="WhatsApp">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-brand-cardBorder flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center sm:text-left">
+        <div>© 2026 VOLTX EV SOLUTIONS. All Rights Reserved.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FIXED MOBILE BOTTOM ACTION BAR ==================== -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-brand-dark/95 backdrop-blur-lg border-t border-brand-cardBorder p-2.5 px-3 shadow-2xl">
+    <div class="grid grid-cols-12 gap-2 items-center">
+      <!-- Call -->
+      <a href="tel:7795569978" class="col-span-3 flex flex-col items-center justify-center py-1.5 bg-brand-card rounded-xl border border-brand-cardBorder text-slate-200">
+        <i data-lucide="phone" class="w-4 h-4 text-brand-green"></i>
+        <span class="text-[10px] font-bold mt-0.5">Call</span>
+      </a>
+      
+      <!-- WhatsApp -->
+      <a href="https://wa.me/917795569978?text=Hi%20VoltX%2C%20I%20am%20interested%20in%20Free%20EV%20Charger%20Installation" target="_blank" rel="noopener noreferrer" class="col-span-3 flex flex-col items-center justify-center py-1.5 bg-brand-card rounded-xl border border-brand-cardBorder text-slate-200">
+        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+        <span class="text-[10px] font-bold mt-0.5">WhatsApp</span>
+      </a>
+      
+      <!-- Primary Survey CTA -->
+      <a href="#contact" class="col-span-6 flex items-center justify-center py-2.5 bg-brand-green text-brand-black font-extrabold text-xs rounded-xl shadow-neon text-center">
+        FREE SITE SURVEY
+      </a>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Hamburger Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // Form Handling Simulation
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('surveyForm');
+      const successBanner = document.getElementById('formSuccess');
+      successBanner.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => {
+        successBanner.classList.add('hidden');
+      }, 6000);
+    }
+  </script>
+</body>
+</html>
